@@ -1,9 +1,17 @@
 1. У нас таблица с 2 колонками: name и score:
 
-SELECT ROWID, name, score FROM RECORDS - вывести данные из таблицы во вкладке sql
-
+SELECT ROWID, name, score FROM RECORDS - вывести данные из таблицы во вкладке sql из базы RECORDS
 ROWID - стандартное поле порядка строк, все числа уникальные, при удалении не восстанавливаются
-
 ORDER by score - сортировка по колонке score от меньшего к большему
-
 ORDER by score DESC - сортировка по колонке score от большего к меньшему
+LIMIT 3 - выводит только первые 3 строки после сортировки, число строк назначается любое
+GROUP by name - группировка по колонке name
+
+SELECT name, max(score) FROM RECORDS - max(score) выводит максимальное число по колонке score после группировки
+GROUP by name
+
+SELECT name, count(score) FROM RECORDS - count(score) выводит подсчет, сколько раз встречается вывод очков по имени
+GROUP by name
+
+SELECT name, max(score) score FROM RECORDS - если после max(score) написать название score, это будет имя колонки,
+    можно поменять таким образом название любой колонки, к примеру name gamer - колонка будет с именем gamer
